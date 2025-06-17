@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-primary text-white;
+  font-family: 'Inter', sans-serif;
+}
+
+.section-padding {
+  @apply py-20 px-4 md:px-8 lg:px-16;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-sea-blue;
+}
+
+.card {
+  @apply bg-secondary/20 backdrop-blur-sm rounded-xl p-6 border border-white/10;
+}
+
+.nav-link {
+  @apply text-white/80 hover:text-white transition-colors duration-300;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-accent to-sea-blue rounded-lg text-white font-medium 
+  hover:opacity-90 transition-opacity duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border border-white/20 rounded-lg text-white font-medium 
+  hover:bg-white/10 transition-colors duration-300;
+}
+
+/* 3D Card Effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary;
+}
+
+/* Form Focus Styles */
+input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-accent/50;
+}
+
+/* Loading Animation */
+.loading-dots::after {
+  content: '...';
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+} 
